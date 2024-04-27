@@ -192,14 +192,40 @@ input:focus-visible {
   letter-spacing: .24px;
 }
 
-/*.footer-list {*/
-/*  font-size: 14px;*/
-/*  color: #abb0ba;*/
-/*  line-height: 35px;*/
-/*}*/
-
 .footer-list li a {
   font-size: 14px;
   color: #abb0ba;
   line-height: 35px;
 }
+
+ol {
+  list-style: auto;
+}
+
+.favorite {
+  color: #fc0000;
+}
+
+.border-line {
+  border: 1px solid #dfe1e5;
+  margin-top: 80px;
+}
+
+.steps-title {
+   font-size: 20px;
+   font-weight: 600;
+   color: #17191c;
+ }
+.steps-list {
+   font-size: 14px;
+   font-weight: 400;
+   color: #5c6370;
+ }
+.steps-container {
+   padding: 80px 0;
+/*@include media-breakpoint-up(md) {*/
+/*  padding: 120px 0px;*/
+/*}*/
+/*}*/
+}
+

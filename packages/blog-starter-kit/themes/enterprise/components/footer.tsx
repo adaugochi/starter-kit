@@ -16,7 +16,7 @@ export const Footer = () => {
 				{PUBLICATION_LOGO ? (
 					<div className="mb-20 flex w-full flex-row justify-center">
 						<Link
-							href={'/'}
+							href={'https://kwikpik.io/'}
 							aria-label={`${publication.title} home page`}
 							className="flex flex-row items-center gap-5"
 						>
@@ -36,16 +36,16 @@ export const Footer = () => {
 							</p>
 							<ul className="flex flex-col gap-1 footer-list">
                 <li>
-                  <Link href="https://kwikpik.io//about">About us</Link>
+                  <Link href="https://kwikpik.io/about">About us</Link>
                 </li>
                 <li>
                   <Link href="/">Blog</Link>
                 </li>
                 <li>
-                  <Link href="https://kwikpik.io//careers">Careers</Link>
+                  <Link href="https://kwikpik.io/careers">Careers</Link>
                 </li>
                 <li>
-                  <Link href="https://kwikpik.io//sdg">Sustainability and Climate</Link>
+                  <Link href="https://kwikpik.io/sdg">Sustainability and Climate</Link>
                 </li>
                 <li>
                   <Link href="https://kwikpik.io/financial-inclusion">Financial Inclusion</Link>

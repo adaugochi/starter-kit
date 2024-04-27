@@ -31,6 +31,7 @@ import {
 import { DEFAULT_COVER } from '../utils/const';
 import mailbox from "../public/icons/markunread_mailbox.svg";
 import Image from "next/image";
+import Steps from "../components/steps";
 
 const SubscribeForm = dynamic(() =>
 	import('../components/subscribe-form').then((mod) => mod.SubscribeForm),
@@ -188,7 +189,9 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 							)}
 						</>
 					)}
+          <hr className="border-line"/>
 				</Container>
+        <Steps/>
         <Footer />
 			</Layout>
 		</AppProvider>
