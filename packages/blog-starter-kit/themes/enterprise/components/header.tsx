@@ -10,6 +10,7 @@ import logo from "../public/logos/logo.svg"
 import PublicationSidebar from './sidebar';
 import Image from 'next/image';
 import Link from 'next/link';
+import {appName} from "../utils/const";
 
 function hasUrl(
 	navbarItem: PublicationNavbarItem,
@@ -33,7 +34,7 @@ export const Header = () => {
     },
     {
       url: "https://business.kwikpik.io/",
-      label: "Kwikpik for Business"
+      label: `${appName} for Business`
     },
     {
       url: "https://merchant.kwikpik.io/",
@@ -97,7 +98,7 @@ export const Header = () => {
 	);
 
 	return (
-		<header className="py-10">
+		<header className="py-3">
 			<Container className="grid grid-cols-4 gap-5 px-5">
 				<div className="col-span-2 flex flex-1 flex-row items-center gap-2 lg:col-span-1">
 					<div className="lg:hidden">
@@ -114,19 +115,20 @@ export const Header = () => {
 						)}
 					</div>
 					<div className="hidden lg:block">
-            <Link className="navbar-brand px-0 ps-xl-3" href="/" passHref>
+            <Link className="navbar-brand px-0 ps-xl-3" href="https://kwikpik.io/" passHref>
               <Image src={logo} alt="brand logo" width="100" height="28" quality={100}/>
             </Link>
 					</div>
 				</div>
 				<div className="col-span-2 flex flex-row items-center justify-end gap-5 text-slate-300 lg:col-span-3">
 					<nav className="hidden lg:block">{navList}</nav>
-          <Link href="/" className="btn btn-transparent fs-12 fw-500">Learn more
+          <Link href="/" className="btn btn-transparent fs-12 fw-500">
+            Learn more
           </Link>
 				</div>
 			</Container>
 			<div className="mt-5 flex justify-center lg:hidden">
-        <Link className="navbar-brand px-0 ps-xl-3" href="/" passHref>
+        <Link className="navbar-brand px-0 ps-xl-3" href="https://kwikpik.io/" passHref>
           <Image src={logo} alt="brand logo" width="100" height="28" quality={100}/>
         </Link>
 			</div>

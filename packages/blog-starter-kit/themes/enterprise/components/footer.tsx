@@ -36,28 +36,28 @@ export const Footer = () => {
 							</p>
 							<ul className="flex flex-col gap-1 footer-list">
                 <li>
-                  <Link href="/about" target="_blank">About us</Link>
+                  <Link href="https://kwikpik.io//about">About us</Link>
                 </li>
                 <li>
-                  <Link href="/blog" target="_blank">Blog</Link>
+                  <Link href="/">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/careers" target="_blank">Careers</Link>
+                  <Link href="https://kwikpik.io//careers">Careers</Link>
                 </li>
                 <li>
-                  <Link href="/sdg" target="_blank">Sustainability and Climate</Link>
+                  <Link href="https://kwikpik.io//sdg">Sustainability and Climate</Link>
                 </li>
                 <li>
-                  <Link href="/financial-inclusion" target="_blank">Financial Inclusion</Link>
+                  <Link href="https://kwikpik.io/financial-inclusion">Financial Inclusion</Link>
                 </li>
                 <li>
-                  <Link href="/market-access" target="_blank">Market Access</Link>
+                  <Link href="https://kwikpik.io/market-access">Market Access</Link>
                 </li>
                 <li>
-                  <Link href="/gender-equality" target="_blank">Gender Equality</Link>
+                  <Link href="https://kwikpik.io/gender-equality">Gender Equality</Link>
                 </li>
                 <li>
-                  <Link href="/hedera" target="_blank">
+                  <Link href="https://kwikpik.io/hedera">
                     <span>{appName} and Hedera</span>
                   </Link>
                 </li>
@@ -90,10 +90,10 @@ export const Footer = () => {
 							<p className="mb-2 footer-title">Help</p>
 							<ul className="flex flex-col gap-1 footer-list">
                 <li>
-                  <Link href="/faq" target="_blank">FAQs</Link>
+                  <Link href="https://kwikpik.io/faq">FAQs</Link>
                 </li>
                 <li>
-                  <Link href="/contact" target="_blank">Contact us</Link>
+                  <Link href="https://kwikpik.io/contact">Contact us</Link>
                 </li>
 							</ul>
 						</div>
@@ -101,16 +101,16 @@ export const Footer = () => {
 							<p className="mb-2 footer-title">Legal</p>
 							<ul className="flex flex-col gap-1 footer-list">
                 <li>
-                  <Link href="/terms-and-conditions" target="_blank">Terms & conditions</Link>
+                  <Link href="https://kwikpik.io/terms-and-conditions">Terms & conditions</Link>
                 </li>
                 <li>
-                  <Link href="/privacy-policy" target="_blank">Privacy policy</Link>
+                  <Link href="https://kwikpik.io/privacy-policy">Privacy policy</Link>
                 </li>
                 <li>
-                  <Link href="/cookie-policy" target="_blank">Cookie policy</Link>
+                  <Link href="https://kwikpik.io/cookie-policy">Cookie policy</Link>
                 </li>
                 <li>
-                  <Link href="/insurance-policy" target="_blank">Insurance policy</Link>
+                  <Link href="https://kwikpik.io/insurance-policy">Insurance policy</Link>
                 </li>
 							</ul>
 						</div>

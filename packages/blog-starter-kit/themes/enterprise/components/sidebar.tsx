@@ -7,6 +7,7 @@ import { useAppContext } from './contexts/appContext';
 import CloseSVG from './icons/svgs/CloseSVG';
 import { PublicationLogo } from './publication-logo';
 import { SocialLinks } from './social-links';
+import {appName} from "../utils/const";
 
 type Props = {
 	toggleSidebar: () => void;
@@ -21,16 +22,16 @@ function PublicationSidebar(props: Props) {
 
   const visibleItems = [
     {
-      url: "/about",
+      url: "https://kwikpik.io/about",
       label: "About us"
     },
     {
-      url: "/help-desk",
+      url: "https://kwikpik.io/help-desk",
       label: "Help Desk"
     },
     {
       url: "https://business.kwikpik.io/",
-      label: "Kwikpik for Business"
+      label: `${appName} for Business`
     },
     {
       url: "https://merchant.kwikpik.io/",
@@ -88,14 +89,6 @@ function PublicationSidebar(props: Props) {
 						</h2>
 						<section className="mb-10">
 							<ul className="flex flex-col gap-2 text-slate-700 dark:text-white">
-								<li>
-									<Link
-										href="/"
-										className="transition-200 block truncate text-ellipsis whitespace-nowrap rounded p-2 px-3 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
-									>
-										Home
-									</Link>
-								</li>
 								{navbarItems.map((item) => (
 									<li key={item.url}>
 										<Link
@@ -109,7 +102,6 @@ function PublicationSidebar(props: Props) {
                 {visibleItems.map((item) => (
                   <li key={item.url}>
                     <Link
-                      target="_blank"
                       href={item.url}
                       className="transition-200 block truncate text-ellipsis whitespace-nowrap rounded p-2 px-3 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
                     >
