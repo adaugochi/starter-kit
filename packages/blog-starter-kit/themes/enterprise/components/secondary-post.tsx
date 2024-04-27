@@ -28,18 +28,18 @@ export const SecondaryPost = ({ title, coverImage, date, excerpt, slug }: Props)
 				<h1 className="text-lg font-semibold leading-tight text-slate-800 dark:text-neutral-50">
 					<Link
 						href={postURL}
-						className="hover:text-primary-600 dark:hover:text-primary-500 hover:underline"
+						className="blog-title fs-16"
 					>
 						{title}
 					</Link>
 				</h1>
 				<Link href={postURL}>
-					<p className="text-md leading-snug text-slate-500 dark:text-neutral-400">
+					<p className="blog-subtext">
 						{excerpt.length > 100 ? excerpt.substring(0, 100) + '…' : excerpt}
 					</p>
 				</Link>
 				<div className="text-sm font-semibold text-slate-500 dark:text-neutral-300">
-					<Link href={postURL}>
+					<Link href={postURL} className="fs-12">
 						<DateFormatter dateString={date} />
 					</Link>
 				</div>

@@ -19,6 +19,25 @@ function PublicationSidebar(props: Props) {
 	const { publication } = useAppContext();
 	const hasSocialLinks = !Object.values(publication.links!).every((val) => val === '');
 
+  const visibleItems = [
+    {
+      url: "/about",
+      label: "About us"
+    },
+    {
+      url: "/help-desk",
+      label: "Help Desk"
+    },
+    {
+      url: "https://business.kwikpik.io/",
+      label: "Kwikpik for Business"
+    },
+    {
+      url: "https://merchant.kwikpik.io/",
+      label: "Merchant App"
+    }
+  ];
+
 	useEffect(() => {
 		setIsMounted(true);
 	}, []);
@@ -87,15 +106,18 @@ function PublicationSidebar(props: Props) {
 										</Link>
 									</li>
 								))}
+                {visibleItems.map((item) => (
+                  <li key={item.url}>
+                    <Link
+                      href={item.url}
+                      className="transition-200 block truncate text-ellipsis whitespace-nowrap rounded p-2 px-3 transition-colors hover:bg-slate-100 hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
 							</ul>
 						</section>
-
-						{hasSocialLinks && (
-							<h2 className="mb-4 text-sm font-semibold uppercase leading-6 text-slate-500 dark:text-slate-400">
-								Blog socials
-							</h2>
-						)}
-						<SocialLinks isSidebar />
 					</div>
 				</DialogPrimitive.Content>
 			</DialogPrimitive.Portal>

@@ -6,7 +6,10 @@ import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
 import HamburgerSVG from './icons/svgs/HamburgerSVG';
 import { PublicationLogo } from './publication-logo';
+import logo from "../public/logos/logo.svg"
 import PublicationSidebar from './sidebar';
+import Image from 'next/image';
+import Link from 'next/link';
 
 function hasUrl(
 	navbarItem: PublicationNavbarItem,
@@ -19,7 +22,24 @@ export const Header = () => {
 	const [isSidebarVisible, setIsSidebarVisible] = useState<boolean>();
 	const { publication } = useAppContext();
 	const navbarItems = publication.preferences.navbarItems.filter(hasUrl);
-	const visibleItems = navbarItems.slice(0, 3);
+	const visibleItems = [
+    {
+      url: "/about",
+      label: "About us"
+    },
+    {
+      url: "/help-desk",
+      label: "Help Desk"
+    },
+    {
+      url: "https://business.kwikpik.io/",
+      label: "Kwikpik for Business"
+    },
+    {
+      url: "https://merchant.kwikpik.io/",
+      label: "Merchant App"
+    }
+  ];
 	const hiddenItems = navbarItems.slice(3);
 
 	const toggleSidebar = () => {
@@ -27,14 +47,14 @@ export const Header = () => {
 	};
 
 	const navList = (
-		<ul className="flex flex-row items-center gap-2 text-white">
+		<ul className="flex flex-row items-center gap-2">
 			{visibleItems.map((item) => (
 				<li key={item.url}>
 					<a
 						href={item.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="transition-200 block max-w-[200px] truncate text-ellipsis whitespace-nowrap rounded-full p-2 transition-colors hover:bg-white hover:text-black dark:hover:bg-neutral-800 dark:hover:text-white"
+						className="transition-200 block truncate text-ellipsis whitespace-nowrap ps-5 fw-500 fs-14 text__black"
 					>
 						{item.label}
 					</a>
@@ -77,7 +97,7 @@ export const Header = () => {
 	);
 
 	return (
-		<header className="border-b bg-slate-950 py-10 dark:border-neutral-800 dark:bg-neutral-900">
+		<header className="py-10">
 			<Container className="grid grid-cols-4 gap-5 px-5">
 				<div className="col-span-2 flex flex-1 flex-row items-center gap-2 lg:col-span-1">
 					<div className="lg:hidden">
@@ -85,7 +105,7 @@ export const Header = () => {
 							type="outline"
 							label=""
 							icon={<HamburgerSVG className="h-5 w-5 stroke-current" />}
-							className="rounded-xl border-transparent !px-3 !py-2 text-white hover:bg-slate-900 dark:hover:bg-neutral-800"
+							className="rounded-xl border-transparent !px-3 !py-2 hover:bg-slate-900 dark:hover:bg-neutral-800"
 							onClick={toggleSidebar}
 						/>
 
@@ -94,16 +114,21 @@ export const Header = () => {
 						)}
 					</div>
 					<div className="hidden lg:block">
-						<PublicationLogo />
+            <Link className="navbar-brand px-0 ps-xl-3" href="/" passHref>
+              <Image src={logo} alt="brand logo" width="100" height="28" quality={100}/>
+            </Link>
 					</div>
 				</div>
 				<div className="col-span-2 flex flex-row items-center justify-end gap-5 text-slate-300 lg:col-span-3">
 					<nav className="hidden lg:block">{navList}</nav>
-					<Button href={baseUrl} as="a" type="primary" label="Book a demo" />
+          <Link href="/" className="btn btn-transparent fs-12 fw-500">Learn more
+          </Link>
 				</div>
 			</Container>
 			<div className="mt-5 flex justify-center lg:hidden">
-				<PublicationLogo />
+        <Link className="navbar-brand px-0 ps-xl-3" href="/" passHref>
+          <Image src={logo} alt="brand logo" width="100" height="28" quality={100}/>
+        </Link>
 			</div>
 		</header>
 	);

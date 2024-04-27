@@ -29,6 +29,8 @@ import {
 	PublicationFragment,
 } from '../generated/graphql';
 import { DEFAULT_COVER } from '../utils/const';
+import mailbox from "../public/icons/markunread_mailbox.svg";
+import Image from "next/image";
 
 const SubscribeForm = dynamic(() =>
 	import('../components/subscribe-form').then((mod) => mod.SubscribeForm),
@@ -121,7 +123,7 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 					/>
 				</Head>
 				<Header />
-				<Container className="flex flex-col items-stretch gap-10 px-5 pb-10">
+				<Container className="flex flex-col items-stretch gap-10 px-5 pb-10 mt-120px">
 					<Navbar />
 
 					{allPosts.length === 0 && (
@@ -155,10 +157,15 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 					{allPosts.length > 0 && (
 						<div className="bg-primary-50 grid grid-cols-4 rounded-lg px-5 py-5 dark:bg-neutral-900 md:py-10">
 							<div className="col-span-full md:col-span-2 md:col-start-2">
-								<h2 className="text-primary-600 dark:text-primary-500 mb-5 text-center text-lg font-semibold">
-									Subscribe to our newsletter for updates and changelog.
-								</h2>
+                <div className="flex justify-center">
+                  <Image src={mailbox} alt="brand logo" width="32" height="32" quality={100}/>
+                </div>
+                <h4 className="fs-24 fw-600 text__dark text-center mt-2">Get fresh insights delivered to you monthly.</h4>
+                <p className="fs-14 text__gray text-center mt-2 mb-3">
+                  No spam, just quality news straight into your inbox.
+                </p>
 								<SubscribeForm />
+                <p className="text-center fs-12 mt-3 text__light-gray">Unsubscribe anytime!</p>
 							</div>
 						</div>
 					)}
@@ -182,7 +189,7 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 						</>
 					)}
 				</Container>
-				<Footer />
+        <Footer />
 			</Layout>
 		</AppProvider>
 	);

@@ -4,6 +4,7 @@ const ANALYTICS_BASE_URL = 'https://hn-ping2.hashnode.com';
 const ADVANCED_ANALYTICS_BASE_URL = 'https://stats.hashnode.com';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const appName = process.env.NEXT_PUBLIC_APP_NAME;
 const GQL_ENDPOINT = process.env.NEXT_PUBLIC_HASHNODE_GQL_ENDPOINT;
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST;
 
