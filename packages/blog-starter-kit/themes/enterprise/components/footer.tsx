@@ -36,28 +36,28 @@ export const Footer = () => {
 							</p>
 							<ul className="flex flex-col gap-1 footer-list">
                 <li>
-                  <Link href="/about">About us</Link>
+                  <Link href="/about" target="_blank">About us</Link>
                 </li>
                 <li>
-                  <Link href="/blog">Blog</Link>
+                  <Link href="/blog" target="_blank">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/careers">Careers</Link>
+                  <Link href="/careers" target="_blank">Careers</Link>
                 </li>
                 <li>
-                  <Link href="/sdg">Sustainability and Climate</Link>
+                  <Link href="/sdg" target="_blank">Sustainability and Climate</Link>
                 </li>
                 <li>
-                  <Link href="/financial-inclusion">Financial Inclusion</Link>
+                  <Link href="/financial-inclusion" target="_blank">Financial Inclusion</Link>
                 </li>
                 <li>
-                  <Link href="/market-access">Market Access</Link>
+                  <Link href="/market-access" target="_blank">Market Access</Link>
                 </li>
                 <li>
-                  <Link href="/gender-equality">Gender Equality</Link>
+                  <Link href="/gender-equality" target="_blank">Gender Equality</Link>
                 </li>
                 <li>
-                  <Link href="/hedera">
+                  <Link href="/hedera" target="_blank">
                     <span>{appName} and Hedera</span>
                   </Link>
                 </li>
@@ -90,10 +90,10 @@ export const Footer = () => {
 							<p className="mb-2 footer-title">Help</p>
 							<ul className="flex flex-col gap-1 footer-list">
                 <li>
-                  <Link href="/faq">FAQs</Link>
+                  <Link href="/faq" target="_blank">FAQs</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact us</Link>
+                  <Link href="/contact" target="_blank">Contact us</Link>
                 </li>
 							</ul>
 						</div>
@@ -101,16 +101,16 @@ export const Footer = () => {
 							<p className="mb-2 footer-title">Legal</p>
 							<ul className="flex flex-col gap-1 footer-list">
                 <li>
-                  <Link href="/terms-and-conditions">Terms & conditions</Link>
+                  <Link href="/terms-and-conditions" target="_blank">Terms & conditions</Link>
                 </li>
                 <li>
-                  <Link href="/privacy-policy">Privacy policy</Link>
+                  <Link href="/privacy-policy" target="_blank">Privacy policy</Link>
                 </li>
                 <li>
-                  <Link href="/cookie-policy">Cookie policy</Link>
+                  <Link href="/cookie-policy" target="_blank">Cookie policy</Link>
                 </li>
                 <li>
-                  <Link href="/insurance-policy">Insurance policy</Link>
+                  <Link href="/insurance-policy" target="_blank">Insurance policy</Link>
                 </li>
 							</ul>
 						</div>
