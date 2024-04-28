@@ -181,7 +181,7 @@ input:focus-visible {
 }
 
 .bg-dark {
-  background-color: #17191c;
+  background-color: #17191c !important;
 }
 
 .footer-title {
