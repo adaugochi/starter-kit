@@ -124,7 +124,7 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 					/>
 				</Head>
 				<Header />
-				<Container className="flex flex-col items-stretch gap-10 px-5 pb-10 mt-120px">
+				<Container className="flex flex-col items-stretch gap-10 px-5 pb-10 mt-80px">
 					<Navbar />
 
 					{allPosts.length === 0 && (

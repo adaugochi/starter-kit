@@ -4,7 +4,7 @@ import {appName} from "../utils/const";
 
 export const Navbar = () => {
 	return (
-		<div className="grid grid-cols-1 items-center gap-5 py-5 text-sm md:grid-cols-2">
+		<div className="grid grid-cols-1 items-center gap-5 pb-5 text-sm md:grid-cols-2">
       <div>
         <h1 className="blog-head">Stay Informed with the {appName} Blog.</h1>
         <p className="blog-subtext mt-2">
