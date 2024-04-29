@@ -64,7 +64,7 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
 					{!post.coAuthors?.length && (
 						<a
 						href={`https://hashnode.com/@${post.author.username}`}
-						className="ml-2 font-semibold text-slate-600 dark:text-white md:ml-0"
+						className="ml-2 font-semibold fs-14 text-slate-600 dark:text-white md:ml-0"
 						>
 						<span>{post.author.name}</span>
 						</a>
@@ -74,9 +74,9 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
 						onClick={openCoAuthorModal}
 						className="ml-2 text-left font-semibold text-slate-600 hover:underline dark:text-white"
 						>
-						<span>{post.author.name}</span>
+						<span className="fs-14">{post.author.name}</span>
 						{post.coAuthors && (
-							<span className="font-normal">
+							<span className="font-normal fs-14">
 							{' '}
 							<br className="block sm:hidden" />
 							with {post.coAuthors.length} co-author{post.coAuthors.length === 1 ? '' : 's'}
@@ -85,7 +85,7 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
 						</button>
 					)}
 				</div>
-				<div className="mb-5 flex w-full flex-row items-center justify-center md:mb-0 md:w-auto md:justify-start">
+				<div className="mb-5 flex w-full flex-row fs-14 items-center justify-center md:mb-0 md:w-auto md:justify-start">
 					<span className="mx-3 hidden font-bold text-slate-500 md:block">&middot;</span>
 					<DateFormatter dateString={date} />
 					{readTimeInMinutes && <span className="mx-3 hidden font-bold text-slate-500 md:block">&middot;</span>}

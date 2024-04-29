@@ -59,8 +59,8 @@ export const PostTOC = () => {
 
 	return (
 		<div className="w-full">
-			<div className="mx-auto w-full max-w-screen-md rounded-lg border border-b-4 border-r-4 p-5 text-base leading-snug dark:border-neutral-800 dark:text-neutral-50 md:p-8">
-				<h2 className="mb-5 text-lg font-bold md:text-xl">Table of contents</h2>
+			<div className="mx-auto w-full max-w-screen-md rounded-lg border border-b-4 border-r-4 py-5 text-base leading-snug dark:border-neutral-800 dark:text-neutral-50 md:p-8">
+				<h2 className="mb-5 text-lg font-bold md:text-xl px-3">Table of contents</h2>
 				<Toc parentId={null} data={mapTableOfContentItems(post.features.tableOfContents.items)} />
 			</div>
 		</div>

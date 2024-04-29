@@ -77,6 +77,10 @@ body {
   font-size: 24px;
 }
 
+.fs-32 {
+  font-size: 32px;
+}
+
 .fs-40 {
   font-size: 40px;
 }
@@ -227,5 +231,9 @@ ol {
 /*  padding: 120px 0px;*/
 /*}*/
 /*}*/
+}
+
+.hashnode-content-style > h1 {
+  font-size: 32px !important;
 }
 
