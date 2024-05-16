@@ -114,7 +114,7 @@ export const Header = () => {
 							<PublicationSidebar navbarItems={navbarItems} toggleSidebar={toggleSidebar} />
 						)}
 					</div>
-					<div className="hidden lg:block">
+					<div className="lg:flex hidden">
             <Link className="navbar-brand px-0 ps-xl-3" href="https://kwikpik.io/" passHref>
               <Image src={logo} alt="brand logo" width="100" height="28" quality={100}/>
             </Link>

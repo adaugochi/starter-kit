@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { useAppContext } from './contexts/appContext';
+import tiktokIcon from './icons/tiktok.png';
 import {FacebookSVG, GithubSVG, HashnodeSVG, InstagramSVG, LinkedinSVG, RssSVG, XSVG, YoutubeSVG} from './icons';
+import Image from "next/image";
 
 export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 	const { publication } = useAppContext();
@@ -80,6 +82,17 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
           className="flex flex-row items-center justify-center rounded-full border-gray border-slate-200 p-2"
         >
           <InstagramSVG className="h-5 w-5 stroke-current text-white" />
+        </Link>
+
+        <Link
+          prefetch={false}
+          href={`https://instagram.com/kwikpik.io`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open blog XML Feed, opens in new tab"
+          className="flex flex-row items-center justify-center rounded-full border-gray border-slate-200 p-2"
+        >
+          <Image alt="tiktok logo" src={tiktokIcon} className="h-5 w-5 stroke-current text-white"/>
         </Link>
 			</div>
 		</>

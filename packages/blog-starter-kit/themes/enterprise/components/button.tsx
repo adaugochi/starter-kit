@@ -44,11 +44,11 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 					href={href}
 					rel={rel}
 					target={target}
-					className={`flex flex-row items-center justify-start gap-2 rounded-full border px-2 py-2 text-sm font-semibold transition-colors duration-200 md:px-5 md:py-3 md:text-base ${buttonClassName} ${
+					className={`flex flex-row items-center rounded-md justify-start gap-2 rounded-full border px-2 py-2 text-sm font-semibold transition-colors duration-200 md:px-5 md:py-3 md:text-base ${buttonClassName} ${
 						secondaryIcon ? `md:justify-between` : `md:justify-center`
 					}  ${className}`}
 				>
-					<div className="flex flex-row items-center gap-2">
+					<div className="flex flex-row fs-14 items-center gap-2">
 						{icon && <div className="shrink-0">{icon}</div>}
 						{label || null}
 					</div>
@@ -61,11 +61,11 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			<button
 				ref={ref}
 				onClick={onClick}
-				className={`flex flex-row items-center justify-start gap-2 rounded-full border px-2 py-2 text-sm font-semibold transition-colors duration-200 md:px-5 md:py-3 md:text-base ${buttonClassName} ${
+				className={`flex flex-row items-center rounded-md justify-start gap-2 border px-2 py-2 text-sm font-semibold transition-colors duration-200 md:px-5 md:py-3 md:text-base ${buttonClassName} ${
 					secondaryIcon ? `md:justify-between` : `md:justify-center`
 				}  ${className}`}
 			>
-				<div className="flex flex-row items-center gap-2">
+				<div className="flex flex-row fs-14 items-center gap-2">
 					{icon && <div className="shrink-0">{icon}</div>}
 					{label || null}
 				</div>

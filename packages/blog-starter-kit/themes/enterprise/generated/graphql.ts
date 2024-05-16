@@ -761,6 +761,11 @@ export type CreateDraftInput = {
   coverImageOptions?: InputMaybe<CoverImageOptionsInput>;
   /** A flag to indicate if the comments are disabled for the resulting draft. */
   disableComments?: InputMaybe<Scalars['Boolean']['input']>;
+  /**
+   * The id of the user who owns the draft. When this field is supplied, the draft is created directly under that user's account.
+   * Only applicable for team publications.
+   */
+  draftOwner?: InputMaybe<Scalars['ID']['input']>;
   /** Information about the meta tags added to the resulting draft, used for SEO purpose. */
   metaTags?: InputMaybe<MetaTagsInput>;
   /** The URL of the original article if the draft is imported from an external source. */
@@ -886,6 +891,12 @@ export type CustomCssFeature = Feature & {
   published?: Maybe<CustomCss>;
 };
 
+export enum CustomDomainStatus {
+  Invalid = 'INVALID',
+  Valid = 'VALID',
+  Verifying = 'VERIFYING'
+}
+
 /** Contains the publication's dark mode preferences. */
 export type DarkModePreferences = {
   __typename?: 'DarkModePreferences';
@@ -942,6 +953,13 @@ export type DomainStatus = {
   host: Scalars['String']['output'];
   /** A flag indicating if the publication domain is ready. */
   ready: Scalars['Boolean']['output'];
+  /** A flag indicating the status of a publication domain */
+  status: CustomDomainStatus;
+  /**
+   * A timestamp indicating when the domain was verified.
+   * It is only present if the domain is verified.
+   */
+  verifiedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
 /**
@@ -1555,6 +1573,8 @@ export type Mutation = {
   restorePost: RestorePostPayload;
   scheduleDraft: ScheduleDraftPayload;
   subscribeToNewsletter: SubscribeToNewsletterPayload;
+  /** Toggle allowContributorEdits flag to allow or restrict external contributors to further edit published articles. */
+  toggleAllowContributorEdits: ToggleAllowContributorEditsPayload;
   /**
    * Update the follow state for the user that is provided via id or username.
    * If the authenticated user does not follow the user, the mutation will follow the user.
@@ -1697,6 +1717,11 @@ export type MutationScheduleDraftArgs = {
 
 export type MutationSubscribeToNewsletterArgs = {
   input: SubscribeToNewsletterInput;
+};
+
+
+export type MutationToggleAllowContributorEditsArgs = {
+  input: ToggleAllowContributorEditsInput;
 };
 
 
@@ -2394,6 +2419,7 @@ export type Publication = Node & {
   post?: Maybe<Post>;
   /** Returns the list of posts in the publication. */
   posts: PublicationPostConnection;
+  postsViaPage: PublicationPostPageConnection;
   /** The publication preferences around layout, theme and other personalisations. */
   preferences: Preferences;
   /** Publications that are recommended by this publication. */
@@ -2458,6 +2484,16 @@ export type PublicationPostsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<PublicationPostConnectionFilter>;
   first: Scalars['Int']['input'];
+};
+
+
+/**
+ * Contains basic information about the publication.
+ * A publication is a blog that can be created for a user or a team.
+ */
+export type PublicationPostsViaPageArgs = {
+  page: Scalars['Int']['input'];
+  pageSize: Scalars['Int']['input'];
 };
 
 
@@ -2720,6 +2756,16 @@ export type PublicationPostConnectionFilter = {
    * It is an "OR" filter and not an "AND" filter.
    */
   tags?: InputMaybe<Array<Scalars['ObjectId']['input']>>;
+};
+
+export type PublicationPostPageConnection = PageConnection & {
+  __typename?: 'PublicationPostPageConnection';
+  /** The posts belonging to the publication. */
+  nodes: Array<Post>;
+  /** Information to aid in pagination. */
+  pageInfo: OffsetPageInfo;
+  /** The total number of posts. */
+  totalDocuments: Scalars['Int']['output'];
 };
 
 /**
@@ -3480,6 +3526,15 @@ export type TextSelectionSharerFeature = Feature & {
   __typename?: 'TextSelectionSharerFeature';
   /** A flag indicating if the text selection sharer feature is enabled or not. */
   isEnabled: Scalars['Boolean']['output'];
+};
+
+export type ToggleAllowContributorEditsInput = {
+  publicationId: Scalars['ID']['input'];
+};
+
+export type ToggleAllowContributorEditsPayload = {
+  __typename?: 'ToggleAllowContributorEditsPayload';
+  publication?: Maybe<Publication>;
 };
 
 /** Payload for the toggleFollowingUser mutation. */

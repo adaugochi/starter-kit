@@ -27,7 +27,7 @@ export const Footer = () => {
           </div>
           <div className="col-md-6 col-lg-8 mt-5 mt-md-0 ps-md-5">
             <div className="row gy-4">
-              <div className="col-6 col-lg-4">
+              <div className="col-6 col-lg-3">
                 <div>
                   <p className="mb-2 footer-title">
                     COMPANY
@@ -87,10 +87,13 @@ export const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div className="col-6 col-lg-2">
+              <div className="col-6 col-lg-3">
                 <div>
                   <p className="mb-2 footer-title">Help</p>
                   <ul className="flex flex-col gap-1 footer-list">
+                    <li>
+                      <Link href="https://kwikpik.io/help-desk">Knowledge Base</Link>
+                    </li>
                     <li>
                       <Link href="https://kwikpik.io/faq">FAQs</Link>
                     </li>
