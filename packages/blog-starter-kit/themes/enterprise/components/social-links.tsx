@@ -39,7 +39,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 						)}
 						{publication.links?.linkedin && (
 							<a
-								href={publication.links.linkedin}
+								href={`https://www.linkedin.com/company/kwikpikapp`}
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="Find us on Linkedin, external website, opens in new tab"
