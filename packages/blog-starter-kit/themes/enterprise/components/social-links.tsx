@@ -86,7 +86,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 
         <Link
           prefetch={false}
-          href={`https://instagram.com/kwikpik.io`}
+          href={`https://www.tiktok.com/@kwikpik.io`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open blog XML Feed, opens in new tab"
