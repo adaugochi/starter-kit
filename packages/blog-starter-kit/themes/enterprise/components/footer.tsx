@@ -24,6 +24,7 @@ export const Footer = () => {
             </Link>
             <p className="text__light-gray fs-12 my-3">&copy; 2024 {appName}. All Rights Reserved.</p>
             <SocialLinks />
+            <p className="text__light-gray fs-12 my-3">Licensed by NIPOST</p>
           </div>
           <div className="col-md-6 col-lg-8 mt-5 mt-md-0 ps-md-5">
             <div className="row gy-4">
